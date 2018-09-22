@@ -15,7 +15,7 @@ git submodule init
 git submodule update
 ```
 
-To try it out locally, simply execute the following command and go to [](localhost:1313) (by default):
+To try it out locally, simply execute the following command and browse to localhost:1313 (by default):
 
 ```bash
 hugo server
