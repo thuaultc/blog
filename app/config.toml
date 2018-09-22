@@ -1,0 +1,56 @@
+baseURL = "https://thuault.com"
+languageCode = "en-us"
+theme = "cocoa"
+author = "Clément Thuault"
+title = "Clément Thuault"
+pygmentsuseclasses = true
+
+[[menu.main]]
+name                   = "Blog"
+weight                 = -120
+identifier             = "blog"
+url                    = "/blog/"
+
+[[menu.main]]
+name                   = "About"
+weight                 = -110
+identifier             = "about"
+url                    = "/about/"
+
+[[menu.main]]
+name                   = "Tags"
+weight                 = -100
+identifier             = "tags"
+url                    = "/tags/"
+
+[[menu.main]]
+name                   = "Code"
+weight                 = -90
+identifier             = "code"
+url                    = "/code/"
+
+[params]
+include_rss            = true                          # include RSS <link> tag in <head> and show RSS icon
+latestpostscount       = 5                             # how many posts to display on the home page
+i18n_flags             = false                        # whether to display small country flags for available translations
+author                 = "Clément Thuault"
+cachebuster            = true
+dateform               = "Jan 2, 2006"
+dateformfull           = "Mon Jan 2 2006 15:04:05 MST"
+description            = "description here"
+email                  = "thuaultc@gmail.com"
+extracssfiles          = [ "/css/override.css" ]       # In your `static` directory, add/remove files as necessary.
+faviconfile            = "images/favicon.ico"
+facebook               = "//facebook.com/clement.thuault.7"
+github                 = "//github.com/thuaultc"
+lang                   = "en"
+linkedin               = "//linkedin.com/in/clementthuault"
+noshowreadtime         = false
+selfintro              = "I'm a French SRE/SWE techie currently living in Paris and passionate about programming, server automation, chess and golf."
+twitter                = "//twitter.com/TheTapus"
+
+highlightjs            = true
+highlightjslanguages = ["go"]
+highlightjsStyle     = "solarized-dark"
+
+avatar                 = "images/avatar.png"
