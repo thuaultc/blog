@@ -6,6 +6,21 @@ Source for my personal website/blog, made with Hugo.
 
 See it [here](https://thuault.com).
 
+## Usage
+
+Before anything else, don't forget to execute the following commands to add the corresponding theme:
+
+```bash
+git submodule init
+git submodule update
+```
+
+To try it out locally, simply execute the following command and go to [](localhost:1313) (by default):
+
+```bash
+hugo server
+```
+
 ## Build
 
 ### Build image
