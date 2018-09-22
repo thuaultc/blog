@@ -1,0 +1,22 @@
+---
+kind: Ingress
+apiVersion: extensions/v1beta1
+metadata:
+  name: blog
+  namespace: website
+  annotations:
+    kubernetes.io/tls-acme: "true"
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  tls:
+  - hosts:
+    - thuault.com
+    secretName: blog-tls
+  rules:
+  - host: thuault.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: blog
+          servicePort: 80

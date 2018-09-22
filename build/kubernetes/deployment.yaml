@@ -1,0 +1,28 @@
+---
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: blog
+  namespace: website
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: blog
+    spec:
+      imagePullSecrets:
+      - name: registry-credentials
+      containers:
+      - image: registry.thuault.com/clement/website/blog:latest
+        imagePullPolicy: Always
+        name: blog
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: 50m
+            memory: 100Mi
+          requests:
+            cpu: 50m
+            memory: 100Mi
