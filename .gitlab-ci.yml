@@ -11,6 +11,9 @@ build:
   script:
     - echo "Hello world!"
     - ls -la
-    - ./build/build.sh
+    - VERSION="$(cat VERSION)"
+    - REGISTRY="registry.thuault.com"
+    - IMAGE="website/blog"
+    - docker build -t $REGISTRY/$IMAGE:$VERSION -t $REGISTRY/$IMAGE:latest .
   only:
     - master
