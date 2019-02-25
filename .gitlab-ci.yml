@@ -1,0 +1,10 @@
+stages:
+  - build
+
+build:
+  stage: build
+  script:
+    - echo "Hello world!"
+    - ./build/build.sh
+  only:
+    - master

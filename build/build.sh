@@ -5,9 +5,11 @@ set -e
 BUILD_DIR=$(cd $(dirname "$0"); pwd)
 VERSION=$(cat VERSION)
 REGISTRY="registry.thuault.com"
-IMAGE="clement/website/blog"
+IMAGE="website/blog"
 
-sudo docker build -t $REGISTRY/$IMAGE:$VERSION -t $REGISTRY/$IMAGE:latest .
+docker build -t $REGISTRY/$IMAGE:$VERSION -t $REGISTRY/$IMAGE:latest .
 
-sudo docker push $REGISTRY/$IMAGE:$VERSION
-sudo docker push $REGISTRY/$IMAGE:latest
+
+
+#sudo docker push $REGISTRY/$IMAGE:$VERSION
+#sudo docker push $REGISTRY/$IMAGE:latest
