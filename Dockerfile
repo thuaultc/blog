@@ -6,7 +6,7 @@ ENV PATH=/usr/local/hugo:${PATH}
 
 RUN set -x \
     && apk upgrade --update \
-    && apk add --update ca-certificates bash git wget  \
+    && apk add --update ca-certificates bash wget \
     && rm -rf /var/cache/apk/* \
     && mkdir /usr/local/hugo \
     && wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_BINARY}.tar.gz -O /usr/local/hugo/${HUGO_BINARY}.tar.gz \
@@ -16,10 +16,7 @@ RUN set -x \
 
 WORKDIR /srv/app
 COPY app/ .
-
-RUN git submodule init && \
-    git submodule update && \
-    hugo
+RUN hugo
 
 FROM nginx:1.13.8
 EXPOSE 80

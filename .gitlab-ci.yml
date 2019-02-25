@@ -1,4 +1,4 @@
-image: docker:latest
+image: docker:git
 
 services:
   - docker:dind
@@ -13,10 +13,12 @@ build:
   stage: build
   script:
     - echo "Hello world!"
-    - ls -la
     - VERSION="$(cat VERSION)"
     - REGISTRY="registry.thuault.com"
     - IMAGE="website/blog"
+    - git submodule init
+    - git submodule update
+    - ls -la *
     - docker build -t $REGISTRY/$IMAGE:$VERSION -t $REGISTRY/$IMAGE:latest .
   only:
     - master
